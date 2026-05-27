@@ -3,383 +3,752 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>출장경로 - 강남358타워 → 삼성스토어 통영</title>
+<title>출장경로 · 강남358타워 → 삼성스토어 통영</title>
 <meta name="description" content="2026-05-27 강남358타워에서 삼성스토어 통영 가는 도어투도어 출장 경로 (1박2일)" />
-<meta name="theme-color" content="#0b4f8c" />
+<meta name="theme-color" content="#0a0a0a" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Pretendard:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #f4f6fa;
+    --bg: #fafaf9;
     --card: #ffffff;
-    --ink: #14213d;
-    --sub: #5a6478;
-    --line: #e3e7ef;
-    --accent: #0b4f8c;
-    --accent-soft: #e7f0fa;
-    --gold: #d4a017;
-    --ok: #15803d;
+    --card-2: #f5f5f4;
+    --ink: #0a0a0a;
+    --ink-2: #404040;
+    --sub: #737373;
+    --line: #e7e5e4;
+    --accent: #0891b2;
+    --accent-soft: #ecfeff;
+    --accent-ink: #0e7490;
+    --coral: #f97316;
+    --coral-soft: #fff7ed;
     --warn: #b45309;
-    --shadow: 0 1px 3px rgba(20,33,61,.06), 0 4px 16px rgba(20,33,61,.06);
+    --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 12px rgba(0,0,0,.04);
+    --shadow-hov: 0 2px 4px rgba(0,0,0,.06), 0 12px 28px rgba(0,0,0,.08);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #0e1320;
-      --card: #161c2e;
-      --ink: #e7ecf5;
-      --sub: #98a2b8;
-      --line: #232a3e;
-      --accent: #5aa9f0;
-      --accent-soft: #1b2a44;
-      --gold: #f0c14b;
-      --ok: #4ade80;
-      --warn: #f59e0b;
-      --shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.3);
+      --bg: #0a0a0a;
+      --card: #141414;
+      --card-2: #1c1c1c;
+      --ink: #fafafa;
+      --ink-2: #d4d4d4;
+      --sub: #a3a3a3;
+      --line: #262626;
+      --accent: #22d3ee;
+      --accent-soft: #083344;
+      --accent-ink: #67e8f9;
+      --coral: #fb923c;
+      --coral-soft: #2a1306;
+      --warn: #fbbf24;
+      --shadow: 0 1px 2px rgba(0,0,0,.5), 0 4px 12px rgba(0,0,0,.4);
+      --shadow-hov: 0 2px 4px rgba(0,0,0,.6), 0 12px 28px rgba(0,0,0,.5);
     }
   }
+
   * { box-sizing: border-box; }
   html, body {
     margin: 0; padding: 0;
     background: var(--bg); color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", "Pretendard", sans-serif;
+    font-family: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    letter-spacing: -.005em;
     -webkit-font-smoothing: antialiased;
-    line-height: 1.55;
+    -moz-osx-font-smoothing: grayscale;
   }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 16px; }
-  header {
-    padding: 20px 4px 12px;
+
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
   }
-  header .eyebrow {
-    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
-    color: var(--accent); font-weight: 700;
+
+  /* HEADER */
+  header { margin-bottom: 28px; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 14px;
+  }
+  .eyebrow::before {
+    content: ""; display: inline-block;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
   }
   header h1 {
-    margin: 6px 0 4px;
-    font-size: 22px; font-weight: 800; letter-spacing: -.01em;
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    line-height: 1.1;
   }
-  header .sub { color: var(--sub); font-size: 14px; }
+  header h1 .light { font-weight: 300; color: var(--sub); }
+  header .meta {
+    color: var(--sub); font-size: 14px; font-weight: 400;
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;
+  }
+  header .meta span { display: inline-flex; align-items: center; gap: 6px; }
+  header .meta .sep { color: var(--line); }
 
+  /* BENTO GRID */
+  .bento {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .b-1 { grid-column: span 1; }
+  .b-2 { grid-column: span 2; }
+  .b-3 { grid-column: span 3; }
+  .b-4 { grid-column: span 4; }
+  .b-2x2 { grid-column: span 2; grid-row: span 2; }
+
+  @media (max-width: 860px) {
+    .bento { grid-template-columns: repeat(2, 1fr); }
+    .b-3, .b-4 { grid-column: 1 / -1; }
+    .b-2x2 { grid-column: 1 / -1; grid-row: auto; }
+  }
+  @media (max-width: 520px) {
+    .bento { grid-template-columns: 1fr; gap: 12px; }
+    .b-1, .b-2, .b-3, .b-4, .b-2x2 { grid-column: 1 / -1; }
+  }
+
+  /* CARDS */
   .card {
-    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-    padding: 16px 18px; margin: 12px 0; box-shadow: var(--shadow);
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 22px 24px;
+    box-shadow: var(--shadow);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hov);
+    border-color: var(--ink-2);
+  }
+  .card .label {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: var(--sub);
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
   }
   .card h2 {
-    margin: 0 0 10px; font-size: 16px; font-weight: 800;
-    display: flex; align-items: center; gap: 8px;
+    margin: 0 0 16px;
+    font-size: 18px; font-weight: 600;
+    letter-spacing: -.015em;
   }
-  .card h3 {
-    margin: 12px 0 6px; font-size: 14px; font-weight: 700; color: var(--ink);
-  }
-  .card p, .card li { font-size: 14px; }
-  .muted { color: var(--sub); font-size: 13px; }
+  .card p, .card li { font-size: 14px; font-weight: 400; color: var(--ink-2); }
+  .card .muted { color: var(--sub); font-size: 13px; font-weight: 400; }
 
-  /* 1구간 - 출발지점 박스 */
-  .leg {
-    border-left: 3px solid var(--accent);
-    background: var(--accent-soft);
-    padding: 10px 12px;
-    border-radius: 0 8px 8px 0;
-    margin: 10px 0;
+  /* TOP 1 HERO CARD */
+  .hero {
+    background: linear-gradient(145deg, var(--ink) 0%, #1c1c1c 100%);
+    color: #fafafa;
+    border: 1px solid #262626;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+    min-height: 220px;
   }
-  .leg .title { font-weight: 700; margin-bottom: 4px; font-size: 14px; }
-  .leg ul { margin: 4px 0 0; padding-left: 18px; font-size: 13.5px; }
+  .hero::before {
+    content: ""; position: absolute;
+    top: -40%; right: -20%;
+    width: 80%; height: 140%;
+    background: radial-gradient(circle, rgba(34,211,238,.18) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero .label { color: #a3a3a3; }
+  .hero .label::before { background: var(--accent); }
+  .hero .number {
+    font-family: "Inter", sans-serif;
+    font-size: 64px; font-weight: 300;
+    line-height: 1; letter-spacing: -.04em;
+    margin: 8px 0 4px;
+    background: linear-gradient(135deg, #fafafa 0%, var(--accent-ink) 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero h3 {
+    margin: 4px 0 0; font-size: 20px; font-weight: 500;
+    letter-spacing: -.01em; color: #fafafa;
+  }
+  .hero .specs {
+    display: flex; gap: 16px; flex-wrap: wrap;
+    margin: 18px 0 0;
+    font-size: 12px; color: #a3a3a3;
+  }
+  .hero .specs strong { color: #fafafa; font-weight: 500; }
+  .hero a.btn {
+    align-self: flex-start;
+    margin-top: 18px;
+  }
 
+  /* TOP 2,3 - 작은 카드 */
+  .top-sm .number {
+    font-family: "Inter", sans-serif;
+    font-size: 32px; font-weight: 300;
+    color: var(--ink);
+    line-height: 1; letter-spacing: -.03em;
+    margin-bottom: 4px;
+  }
+  .top-sm h3 {
+    margin: 6px 0 4px;
+    font-size: 14px; font-weight: 500;
+    letter-spacing: -.01em;
+  }
+  .top-sm .specs { font-size: 12px; color: var(--sub); margin-bottom: 12px; }
+
+  /* LEG (1구간) */
+  .leg-list { margin: 0; padding: 0; list-style: none; }
+  .leg-item {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .leg-item:last-child { border-bottom: none; }
+  .leg-item .head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .leg-item .name {
+    font-size: 14px; font-weight: 500; color: var(--ink);
+  }
+  .leg-item .time {
+    font-family: "Inter", sans-serif;
+    font-size: 13px; font-weight: 500; color: var(--accent-ink);
+    letter-spacing: -.01em;
+  }
+  .leg-item .steps {
+    margin: 6px 0 0; padding-left: 14px;
+    font-size: 12.5px; color: var(--sub); font-weight: 400;
+  }
+  .leg-item .steps li { margin: 2px 0; }
+
+  /* NOTE - 제외 사유 */
   .note {
-    background: rgba(180,83,9,.08);
-    border-left: 3px solid var(--warn);
-    padding: 8px 12px; border-radius: 0 6px 6px 0;
-    font-size: 13px; margin-top: 10px;
+    background: var(--coral-soft);
+    color: var(--ink-2);
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-size: 12.5px; font-weight: 400;
+    margin-top: 14px;
+    border: 1px solid rgba(249,115,22,.15);
   }
+  .note strong { color: var(--coral); font-weight: 500; }
 
-  /* 표 */
-  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px -4px; }
+  /* TABLE */
+  .tbl-wrap {
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    margin: 6px -8px -8px;
+  }
   table {
-    width: 100%; border-collapse: collapse; font-size: 13px;
-    min-width: 480px;
+    width: 100%; border-collapse: collapse;
+    font-size: 13px; min-width: 360px;
   }
-  th, td { padding: 8px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  th { background: var(--accent-soft); color: var(--ink); font-weight: 700; font-size: 12px; }
-  tbody tr:hover { background: var(--accent-soft); }
+  th, td {
+    padding: 10px 8px; text-align: left;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap; font-weight: 400;
+  }
+  th {
+    font-size: 11px; font-weight: 500;
+    color: var(--sub);
+    letter-spacing: .04em; text-transform: uppercase;
+    background: transparent;
+  }
+  tbody td { color: var(--ink-2); }
+  tbody td:first-child {
+    font-family: "Inter", sans-serif;
+    color: var(--ink); font-weight: 500;
+    letter-spacing: -.01em;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background .2s; }
+  tbody tr:hover { background: var(--card-2); }
 
-  /* 버튼/링크 */
+  /* BUTTON */
   a.btn, a.btn:visited {
-    display: inline-block;
-    background: var(--accent); color: white !important;
-    padding: 6px 10px; border-radius: 6px;
-    text-decoration: none; font-weight: 700; font-size: 12px;
-    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--ink);
+    color: var(--card) !important;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 12px; font-weight: 500;
+    letter-spacing: -.005em; white-space: nowrap;
+    border: 1px solid var(--ink);
+    transition: opacity .2s, transform .2s;
   }
+  a.btn:hover { opacity: .85; transform: translateY(-1px); }
   a.btn.ghost {
-    background: transparent; color: var(--accent) !important;
-    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--ink) !important;
+    border: 1px solid var(--line);
   }
-  a.link { color: var(--accent); text-decoration: none; font-weight: 600; }
+  a.btn.ghost:hover { background: var(--card-2); }
+  a.btn.accent {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff !important;
+  }
+  @media (prefers-color-scheme: dark) {
+    a.btn.accent { color: #0a0a0a !important; }
+  }
+  a.btn.icon {
+    padding: 6px 10px; font-size: 13px;
+  }
+  a.link {
+    color: var(--accent-ink); text-decoration: none;
+    font-size: 13px; font-weight: 500;
+  }
   a.link:hover { text-decoration: underline; }
 
-  /* TOP 3 강조 */
-  .top3 {
-    background: linear-gradient(135deg, var(--accent) 0%, #062f5e 100%);
-    color: #fff; border: none;
+  /* WEATHER */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
-  .top3 h2 { color: #fff; }
-  .top3 .rank {
-    display: inline-block; width: 24px; height: 24px;
-    background: var(--gold); color: #14213d;
-    border-radius: 50%; text-align: center; line-height: 24px;
-    font-weight: 800; font-size: 13px; margin-right: 8px;
+  .w-cell {
+    background: var(--card-2);
+    padding: 12px 14px;
+    border-radius: 14px;
   }
-  .top3 .row {
-    background: rgba(255,255,255,.08);
-    padding: 12px; border-radius: 8px; margin: 8px 0;
+  .w-cell .label { font-size: 10px; margin-bottom: 4px; }
+  .w-cell .value {
+    font-family: "Inter", sans-serif;
+    font-size: 16px; font-weight: 500;
+    letter-spacing: -.01em;
+    color: var(--ink);
   }
-  .top3 .row .meta {
-    font-size: 12px; opacity: .85; margin-top: 6px;
-  }
-  .top3 a.btn {
-    background: var(--gold); color: #14213d !important; margin-top: 8px;
-  }
-
-  /* 호텔/맛집 카드 */
-  .item {
-    padding: 10px 0; border-bottom: 1px solid var(--line);
-  }
-  .item:last-child { border-bottom: none; }
-  .item .name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
-  .item .meta { color: var(--sub); font-size: 12px; }
-  .item .desc { font-size: 13px; margin-top: 4px; color: var(--ink); }
-  .badge {
-    display: inline-block; background: var(--accent-soft); color: var(--accent);
-    padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700;
-    margin-right: 4px;
+  .w-tip {
+    margin-top: 12px;
+    font-size: 12px; color: var(--sub);
   }
 
-  /* 빠른 액션 */
-  .actions {
-    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;
+  /* RESTAURANT GRID */
+  .rest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
   }
-  .actions a.btn { font-size: 13px; padding: 10px 14px; }
+  .rest-item {
+    background: var(--card-2);
+    padding: 14px;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    transition: border-color .2s, transform .2s;
+  }
+  .rest-item:hover { border-color: var(--line); transform: translateY(-2px); }
+  .rest-item .rank {
+    font-family: "Inter", sans-serif;
+    font-size: 11px; font-weight: 500;
+    color: var(--accent-ink);
+    letter-spacing: .04em;
+  }
+  .rest-item .name {
+    font-size: 14px; font-weight: 500;
+    margin: 4px 0 2px;
+    color: var(--ink);
+  }
+  .rest-item .cat {
+    font-size: 11px; color: var(--sub);
+    margin-bottom: 8px;
+  }
+  .rest-item .desc {
+    font-size: 12px; color: var(--ink-2);
+    line-height: 1.45;
+    margin-bottom: 10px;
+  }
+  .rest-item a.link { font-size: 12px; }
+
+  /* HOTEL CARD */
+  .hotel-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 18px;
+    display: flex; flex-direction: column;
+    transition: border-color .2s, transform .2s;
+  }
+  .hotel-card:hover { border-color: var(--ink-2); transform: translateY(-2px); }
+  .hotel-card .rank {
+    font-family: "Inter", sans-serif;
+    font-size: 11px; color: var(--sub);
+    font-weight: 500; letter-spacing: .04em;
+  }
+  .hotel-card .name {
+    font-size: 15px; font-weight: 500;
+    margin: 4px 0 8px;
+    color: var(--ink);
+  }
+  .hotel-card .meta {
+    font-size: 12px; color: var(--sub);
+    margin-bottom: 14px;
+  }
+  .hotel-card .price-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 14px;
+  }
+  .hotel-card .price {
+    font-family: "Inter", sans-serif;
+    font-size: 22px; font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -.02em;
+  }
+  .hotel-card .price .unit {
+    font-size: 12px; color: var(--sub);
+    font-weight: 400;
+    margin-left: 2px;
+  }
+  .hotel-card .rating {
+    font-family: "Inter", sans-serif;
+    font-size: 13px; font-weight: 500;
+    color: var(--accent-ink);
+  }
+  .hotel-card a.btn { align-self: stretch; justify-content: center; }
+
+  /* QUICK ACTIONS */
+  .quick {
+    display: flex; gap: 8px; flex-wrap: wrap;
+  }
+  .quick a.btn { font-size: 12px; padding: 9px 14px; }
+
+  /* SECTION DIVIDER (label between bento rows) */
+  .section-label {
+    font-size: 11px; font-weight: 500;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--sub);
+    margin: 28px 4px 10px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-label::after {
+    content: ""; flex: 1; height: 1px; background: var(--line);
+  }
+
+  /* H3 inside cards */
+  .card h3 {
+    margin: 14px 0 6px;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -.005em;
+  }
+  .card h3:first-of-type { margin-top: 0; }
+  .card h3 .muted { font-weight: 400; }
 
   footer {
-    text-align: center; padding: 24px 16px 40px; color: var(--sub); font-size: 12px;
+    text-align: center;
+    padding: 40px 16px 0;
+    color: var(--sub); font-size: 12px;
+    font-weight: 400;
   }
-  footer a { color: var(--sub); }
+  footer .sig {
+    display: inline-block; margin-top: 6px;
+    padding: 6px 14px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+  }
 
-  /* 호텔 가격 강조 */
-  .price { font-weight: 800; color: var(--accent); }
-
-  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  @media (max-width: 480px) { .grid-2 { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) {
+    .card, a.btn, .rest-item, .hotel-card { transition: none; }
+  }
 </style>
 </head>
 <body>
+
 <div class="wrap">
 
   <header>
-    <div class="eyebrow">🧳 출장 경로</div>
-    <h1>강남358타워 → 삼성스토어 통영</h1>
-    <div class="sub">2026-05-27 (수) · 1박 2일 · 도어투도어 추천</div>
+    <div class="eyebrow">출장 경로</div>
+    <h1>강남358타워<br/><span class="light">→ 삼성스토어 통영</span></h1>
+    <div class="meta">
+      <span>📅 2026-05-27 (수)</span>
+      <span class="sep">·</span>
+      <span>🌙 1박 2일</span>
+      <span class="sep">·</span>
+      <span>🐚 통영 바다</span>
+    </div>
   </header>
 
-  <!-- TOP 3 -->
-  <section class="card top3">
-    <h2>🏆 도어투도어 추천 TOP 3</h2>
-    <p style="font-size:12px;opacity:.85;margin:0 0 8px;">목적지 도착 시각 빠른 순</p>
+  <!-- ROW 1: TOP 3 -->
+  <div class="section-label">도어투도어 추천</div>
+  <div class="bento">
 
-    <div class="row">
-      <div><span class="rank">1</span><strong>서울고속 (일반) 12:30 출발</strong></div>
-      <div class="meta">통영 도착 16:57 · 총 5시간 8분 · 약 41,600원</div>
-      <a class="btn" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫 코버스에서 예매</a>
-    </div>
+    <!-- TOP 1 — Hero -->
+    <article class="card hero b-2x2">
+      <div>
+        <div class="label">Recommended · TOP 1</div>
+        <div class="number">16:57</div>
+        <h3>서울고속 (일반) · 12:30 출발</h3>
+        <div class="specs">
+          <span><strong>총 5시간 8분</strong></span>
+          <span>·</span>
+          <span>약 <strong>41,600원</strong></span>
+          <span>·</span>
+          <span>경부선</span>
+        </div>
+      </div>
+      <a class="btn accent" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">코버스에서 예매 →</a>
+    </article>
 
-    <div class="row">
-      <div><span class="rank">2</span><strong>동서울 (일반) 13:00 출발</strong></div>
-      <div class="meta">통영 도착 17:02 · 총 5시간 13분 · 약 45,200원</div>
-      <a class="btn" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫 버스타고에서 예매</a>
-    </div>
+    <!-- TOP 2 -->
+    <article class="card top-sm b-2">
+      <div class="label">TOP 2</div>
+      <div class="number">17:02</div>
+      <h3>동서울 (일반) · 13:00</h3>
+      <div class="specs">총 5h 13m · 약 45,200원</div>
+      <a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">버스타고 →</a>
+    </article>
 
-    <div class="row">
-      <div><span class="rank">3</span><strong>서울고속 (우등) 13:00 출발</strong></div>
-      <div class="meta">통영 도착 17:27 · 총 5시간 38분 · 약 60,000원</div>
-      <a class="btn" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫 코버스에서 예매</a>
-    </div>
-  </section>
+    <!-- TOP 3 -->
+    <article class="card top-sm b-2">
+      <div class="label">TOP 3</div>
+      <div class="number">17:27</div>
+      <h3>서울고속 (우등) · 13:00</h3>
+      <div class="specs">총 5h 38m · 약 60,000원</div>
+      <a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">코버스 →</a>
+    </article>
 
-  <!-- 1구간 -->
-  <section class="card">
-    <h2>🚇 [1구간] 회사 → 출발지점</h2>
+  </div>
 
-    <div class="leg">
-      <div class="title">🚇 서울고속버스터미널 — 약 9분, 1,500원</div>
-      <ul>
-        <li>강남358타워 → 도보 1분 → 강남역</li>
-        <li>[2호선] 강남역 → 교대역 환승 → [3호선] 교대 → 고속터미널역 (7분, 4정거장)</li>
-        <li>고속터미널역 → 지하 연결 → 서울고속버스터미널</li>
+  <!-- ROW 2: 1구간 + 날씨 -->
+  <div class="section-label">1구간 · 회사 → 출발지점</div>
+  <div class="bento">
+
+    <article class="card b-2">
+      <div class="label">대중교통</div>
+      <ul class="leg-list">
+        <li class="leg-item">
+          <div class="head">
+            <span class="name">🚇 서울고속버스터미널</span>
+            <span class="time">9분 · 1,500원</span>
+          </div>
+          <ul class="steps">
+            <li>강남358타워 → 도보 1분 → 강남역</li>
+            <li>2호선 → 교대 환승 → 3호선 → 고속터미널역 (7분)</li>
+            <li>지하 연결 → 서울고속버스터미널</li>
+          </ul>
+        </li>
+        <li class="leg-item">
+          <div class="head">
+            <span class="name">🚇 서울남부터미널</span>
+            <span class="time">8분 · 1,400원</span>
+          </div>
+          <ul class="steps">
+            <li>강남358타워 → 도보 1분 → 강남역</li>
+            <li>2호선 → 교대 환승 → 3호선 → 남부터미널역 (6분)</li>
+            <li>3번 출구 → 서울남부터미널</li>
+          </ul>
+        </li>
+        <li class="leg-item">
+          <div class="head">
+            <span class="name">🚌 동서울종합터미널</span>
+            <span class="time">22분 · 1,700원</span>
+          </div>
+          <ul class="steps">
+            <li>강남358타워 → 도보 1분 → 강남역</li>
+            <li>2호선 → 잠실 → 강변역 (20분)</li>
+            <li>도보 1분 → 동서울종합터미널</li>
+          </ul>
+        </li>
       </ul>
-    </div>
+      <div class="note">
+        <strong>제외</strong> · 용산역(호남선 KTX 통영 미경유), 수서역(SRT 진주 노선 없음)
+      </div>
+    </article>
 
-    <div class="leg">
-      <div class="title">🚇 서울남부터미널 — 약 8분, 1,400원</div>
-      <ul>
-        <li>강남358타워 → 도보 1분 → 강남역</li>
-        <li>[2호선] 강남역 → 교대역 환승 → [3호선] 교대 → 남부터미널역 (6분, 3정거장)</li>
-        <li>남부터미널역 3번 출구 → 서울남부터미널</li>
-      </ul>
-    </div>
+    <!-- 날씨 -->
+    <article class="card b-2">
+      <div class="label">통영 날씨 · 2026-05-27</div>
+      <div class="weather-grid">
+        <div class="w-cell"><div class="label">🌡️ 기온</div><div class="value">17° / 24°</div></div>
+        <div class="w-cell"><div class="label">☔ 강수</div><div class="value">20%</div></div>
+        <div class="w-cell"><div class="label">☀️ 날씨</div><div class="value">맑음</div></div>
+        <div class="w-cell"><div class="label">🌊 바람</div><div class="value">바닷바람 강함</div></div>
+      </div>
+      <div class="w-tip">💡 가벼운 외투 / 해안 매장 방문 시 바람막이 권장</div>
+    </article>
 
-    <div class="leg">
-      <div class="title">🚌 동서울종합터미널 — 약 22분, 1,700원</div>
-      <ul>
-        <li>강남358타워 → 도보 1분 → 강남역</li>
-        <li>[2호선] 강남역 → 잠실 → 강변역 (20분, 10정거장)</li>
-        <li>강변역 → 도보 1분 → 동서울종합터미널</li>
-      </ul>
-    </div>
+  </div>
 
-    <div class="note">
-      <strong>제외:</strong> 용산역(호남선 KTX는 통영 미경유), 수서역(SRT 진주 노선 운영 안 함)
-    </div>
-  </section>
+  <!-- ROW 3: 2구간 -->
+  <div class="section-label">2구간 · 출발지점 → 통영</div>
+  <div class="bento">
 
-  <!-- 2구간 -->
-  <section class="card">
-    <h2>🚌 [2구간] 출발지점별 차편</h2>
+    <article class="card b-2">
+      <div class="label">서울고속 → 통영 · 4h 10m · 15회</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>출발</th><th>등급</th><th>도착</th><th>요금</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>12:30</td><td>일반</td><td>16:40</td><td>38,600원</td><td><a class="btn ghost icon" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+          <tr><td>13:00</td><td>우등</td><td>17:10</td><td>57,000원</td><td><a class="btn ghost icon" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+          <tr><td>14:00</td><td>프리미엄</td><td>18:10</td><td>60,200원</td><td><a class="btn ghost icon" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+        </tbody>
+      </table></div>
+    </article>
 
-    <h3>■ 서울고속버스터미널 → 통영종합버스터미널 <span class="muted">(약 4h 10m · 하루 15회)</span></h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>출발</th><th>등급</th><th>통영 도착</th><th>요금</th><th>예매</th></tr></thead>
-      <tbody>
-        <tr><td>12:30</td><td>일반</td><td>16:40</td><td>38,600원</td><td><a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-        <tr><td>13:00</td><td>우등</td><td>17:10</td><td>57,000원</td><td><a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-        <tr><td>14:00</td><td>프리미엄</td><td>18:10</td><td>60,200원</td><td><a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-      </tbody>
-    </table></div>
+    <article class="card b-1">
+      <div class="label">서울남부 → 통영 · 4h 26m</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>출발</th><th>등급</th><th>요금</th></tr></thead>
+        <tbody>
+          <tr><td>13:20</td><td>일반</td><td>33,000원</td></tr>
+          <tr><td>14:20</td><td>우등</td><td>43,000원</td></tr>
+          <tr><td>16:20</td><td>일반</td><td>33,000원</td></tr>
+        </tbody>
+      </table></div>
+      <a class="btn ghost" style="margin-top:10px;align-self:flex-start;" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">버스타고 →</a>
+    </article>
 
-    <h3>■ 서울남부터미널 → 통영종합버스터미널 <span class="muted">(약 4h 26m · 하루 11회 · 막차 23:30)</span></h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>출발</th><th>등급</th><th>통영 도착</th><th>요금</th><th>예매</th></tr></thead>
-      <tbody>
-        <tr><td>13:20</td><td>일반</td><td>17:46</td><td>약 33,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-        <tr><td>14:20</td><td>우등</td><td>18:46</td><td>약 43,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-        <tr><td>16:20</td><td>일반</td><td>20:46</td><td>약 33,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-      </tbody>
-    </table></div>
+    <article class="card b-1">
+      <div class="label">동서울 → 통영 · 3h 45m · 4회</div>
+      <div class="tbl-wrap"><table>
+        <thead><tr><th>출발</th><th>등급</th><th>요금</th></tr></thead>
+        <tbody>
+          <tr><td>13:00</td><td>일반</td><td>42,000원</td></tr>
+          <tr><td>17:00</td><td>막차</td><td>42,000원</td></tr>
+        </tbody>
+      </table></div>
+      <a class="btn ghost" style="margin-top:10px;align-self:flex-start;" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">버스타고 →</a>
+    </article>
 
-    <h3>■ 동서울종합터미널 → 통영종합버스터미널 <span class="muted">(약 3h 45m · 하루 4회 · 막차 17:00)</span></h3>
-    <div class="tbl-wrap"><table>
-      <thead><tr><th>출발</th><th>등급</th><th>통영 도착</th><th>요금</th><th>예매</th></tr></thead>
-      <tbody>
-        <tr><td>13:00</td><td>일반</td><td>16:45</td><td>약 42,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-        <tr><td>17:00</td><td>일반 (막차)</td><td>20:45</td><td>약 42,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
-      </tbody>
-    </table></div>
+  </div>
 
-    <p class="muted" style="margin-top:10px;">
-      📱 모바일 통합 예매: <a class="link" href="https://txbus.t-money.co.kr/" target="_blank" rel="noopener">티머니GO</a>
-    </p>
-  </section>
+  <!-- ROW 4: 3구간 + 빠른 액션 -->
+  <div class="section-label">3구간 · 통영터미널 → 매장</div>
+  <div class="bento">
 
-  <!-- 3구간 -->
-  <section class="card">
-    <h2>🚌 [3구간] 통영종합버스터미널 → 삼성스토어 통영</h2>
-    <p class="muted">약 17분 · 4.4km · 시내버스 약 1,500원</p>
-    <div class="leg">
-      <ul>
+    <article class="card b-2">
+      <div class="label">시내버스 · 17분 · 4.4km</div>
+      <ul class="steps" style="margin-top:8px; font-size:13px; color:var(--ink-2); padding-left:16px;">
         <li>통영종합버스터미널 → 도보 1분 → 정류장</li>
-        <li>무전동 방면 시내버스 탑승 (10~15분)</li>
-        <li>무전동 하차 → 도보 3분 → 삼성스토어 통영 (무전대로 55)</li>
+        <li>무전동 방면 시내버스 (10~15분, 약 1,500원)</li>
+        <li>무전동 하차 → 도보 3분 → 삼성스토어 통영</li>
       </ul>
-    </div>
-    <div class="actions">
-      <a class="btn" href="https://map.kakao.com/?sName=통영종합버스터미널&eName=삼성스토어%20통영" target="_blank" rel="noopener">🗺️ 카카오맵 길찾기</a>
-      <a class="btn ghost" href="https://map.kakao.com/link/to/삼성스토어%20통영,34.86029522870429,128.42678617831243" target="_blank" rel="noopener">📍 매장 위치 보기</a>
-    </div>
-  </section>
+      <div class="quick" style="margin-top:14px;">
+        <a class="btn" href="https://map.kakao.com/?sName=통영종합버스터미널&eName=삼성스토어%20통영" target="_blank" rel="noopener">🗺️ 카카오맵 길찾기</a>
+        <a class="btn ghost" href="https://map.kakao.com/link/to/삼성스토어%20통영,34.86029522870429,128.42678617831243" target="_blank" rel="noopener">📍 매장</a>
+      </div>
+    </article>
 
-  <!-- 날씨 -->
-  <section class="card">
-    <h2>🌤️ 통영 날씨 <span class="muted" style="font-weight:400;font-size:13px;">(2026-05-27)</span></h2>
-    <div class="grid-2">
-      <div><span class="badge">기온</span> 최저 17℃ / 최고 24℃</div>
-      <div><span class="badge">강수확률</span> 20%</div>
-      <div><span class="badge">날씨</span> 대체로 맑음</div>
-      <div><span class="badge">바람</span> 바닷바람 다소 강함</div>
-    </div>
-    <p class="muted" style="margin-top:8px;">
-      💡 가벼운 외투/얇은 자켓 권장. 해안 매장 방문 시 바람막이.
-    </p>
-  </section>
+    <article class="card b-2">
+      <div class="label">빠른 액션</div>
+      <div class="quick" style="margin-top:8px;">
+        <a class="btn accent" href="https://mail.google.com/mail/u/0/#drafts" target="_blank" rel="noopener">✉️ Gmail 임시보관함</a>
+        <a class="btn" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener">📅 Calendar</a>
+        <a class="btn ghost" href="https://txbus.t-money.co.kr/" target="_blank" rel="noopener">📱 티머니GO</a>
+        <a class="btn ghost" href="https://map.kakao.com/?q=삼성스토어%20통영" target="_blank" rel="noopener">🗺️ 매장 위치</a>
+      </div>
+      <p class="muted" style="margin-top:14px;">
+        Gmail 임시보관함에 `[출장경로 v2]` 제목으로 저장됨. 검토 후 발송.
+      </p>
+    </article>
 
-  <!-- 맛집 -->
-  <section class="card">
-    <h2>🍽️ 인근 맛집 TOP 5 <span class="muted" style="font-weight:400;font-size:13px;">(무전동 일대)</span></h2>
+  </div>
 
-    <div class="item">
-      <div class="name">1. 대원호김선장 <span class="muted">· 한식·생선회 · 약 0.4km</span></div>
-      <div class="desc">통영 현지 활어회·해물 코스. <strong>예약 권장</strong></div>
-      <a class="link" href="https://map.kakao.com/?q=대원호김선장" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
-    </div>
+  <!-- ROW 5: 맛집 -->
+  <div class="section-label">인근 맛집 · 무전동 일대</div>
+  <div class="bento">
+    <article class="card b-4">
+      <div class="rest-grid">
 
-    <div class="item">
-      <div class="name">2. 미소가짬뽕 <span class="muted">· 중식 · 약 0.3km</span></div>
-      <div class="desc">무전동 인기 짬뽕 전문점. 점심시간 빠른 회전</div>
-      <a class="link" href="https://map.kakao.com/?q=미소가짬뽕%20통영%20무전동" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
-    </div>
+        <div class="rest-item">
+          <div class="rank">No. 01</div>
+          <div class="name">대원호김선장</div>
+          <div class="cat">한식·생선회 · 0.4km</div>
+          <div class="desc">통영 현지 활어회·해물 코스. 예약 권장</div>
+          <a class="link" href="https://map.kakao.com/?q=대원호김선장" target="_blank" rel="noopener">카카오맵 →</a>
+        </div>
 
-    <div class="item">
-      <div class="name">3. 한일식당 <span class="muted">· 한식 · 약 0.2km</span></div>
-      <div class="desc">백반·국밥 위주, 가성비 좋은 한 끼</div>
-      <a class="link" href="https://map.kakao.com/?q=한일식당%20통영%20무전동" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
-    </div>
+        <div class="rest-item">
+          <div class="rank">No. 02</div>
+          <div class="name">미소가짬뽕</div>
+          <div class="cat">중식 · 0.3km</div>
+          <div class="desc">무전동 인기 짬뽕 전문점. 점심 빠른 회전</div>
+          <a class="link" href="https://map.kakao.com/?q=미소가짬뽕%20통영" target="_blank" rel="noopener">카카오맵 →</a>
+        </div>
 
-    <div class="item">
-      <div class="name">4. 베로나835 통영점 <span class="muted">· 카페·디저트 · 약 0.5km</span></div>
-      <div class="desc">매장 미팅 후 디저트·커피 미팅 적합</div>
-      <a class="link" href="https://map.kakao.com/?q=베로나835%20통영" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
-    </div>
+        <div class="rest-item">
+          <div class="rank">No. 03</div>
+          <div class="name">한일식당</div>
+          <div class="cat">한식 · 0.2km</div>
+          <div class="desc">백반·국밥, 가성비 좋은 한 끼</div>
+          <a class="link" href="https://map.kakao.com/?q=한일식당%20통영%20무전동" target="_blank" rel="noopener">카카오맵 →</a>
+        </div>
 
-    <div class="item">
-      <div class="name">5. 롯데리아 롯데마트통영점 <span class="muted">· 햄버거 · 약 0.1km</span></div>
-      <div class="desc">출발 전 간단 요기, 매장과 가장 가까움</div>
-      <a class="link" href="https://map.kakao.com/?q=롯데리아%20롯데마트통영점" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
-    </div>
-  </section>
+        <div class="rest-item">
+          <div class="rank">No. 04</div>
+          <div class="name">베로나835 통영점</div>
+          <div class="cat">카페·디저트 · 0.5km</div>
+          <div class="desc">매장 미팅 후 디저트·커피 미팅 적합</div>
+          <a class="link" href="https://map.kakao.com/?q=베로나835%20통영" target="_blank" rel="noopener">카카오맵 →</a>
+        </div>
 
-  <!-- 호텔 -->
-  <section class="card">
-    <h2>🏨 인근 호텔 TOP 3 <span class="muted" style="font-weight:400;font-size:13px;">(1박 · 70k~100k)</span></h2>
+        <div class="rest-item">
+          <div class="rank">No. 05</div>
+          <div class="name">롯데리아 통영점</div>
+          <div class="cat">햄버거 · 0.1km</div>
+          <div class="desc">출발 전 간단 요기, 매장과 가장 가까움</div>
+          <a class="link" href="https://map.kakao.com/?q=롯데리아%20롯데마트통영점" target="_blank" rel="noopener">카카오맵 →</a>
+        </div>
 
-    <div class="item">
-      <div class="name">1. Hound Hotel Tongyeong <span class="muted">· 2성 · 약 2.5km</span></div>
-      <div><span class="price">81,536원</span> <span class="muted">· 평점 8.0 (79리뷰)</span></div>
-      <a class="btn" style="margin-top:6px;" href="https://www.booking.com/hotel/kr/tongyeonghaundeuhotel.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">🛏️ Booking.com에서 예약</a>
-    </div>
+      </div>
+    </article>
+  </div>
 
-    <div class="item">
-      <div class="name">2. 호텔 피코 <span class="muted">· 2성 · 약 2.7km</span></div>
-      <div><span class="price">77,469원</span> <span class="muted">· 평점 7.3 (88리뷰)</span></div>
-      <a class="btn" style="margin-top:6px;" href="https://www.booking.com/hotel/kr/pico-tongyeong-si2.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">🛏️ Booking.com에서 예약</a>
-    </div>
+  <!-- ROW 6: 호텔 -->
+  <div class="section-label">인근 호텔 · 1박 70k~100k</div>
+  <div class="bento">
 
-    <div class="item">
-      <div class="name">3. 통영관광호텔 <span class="muted">· 약 2.3km</span></div>
-      <div><span class="price">93,000원</span></div>
-      <a class="btn" style="margin-top:6px;" href="https://www.booking.com/hotel/kr/tongyeong-tourist-tongyeongsi.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">🛏️ Booking.com에서 예약</a>
-    </div>
-  </section>
+    <article class="hotel-card b-1" style="grid-column: span 2;">
+      <div class="rank">No. 01 · Recommended</div>
+      <div class="name">Hound Hotel Tongyeong</div>
+      <div class="meta">2성 · 약 2.5km · 강구안 인근</div>
+      <div class="price-row">
+        <div class="price">81,536<span class="unit">원/박</span></div>
+        <div class="rating">★ 8.0 (79)</div>
+      </div>
+      <a class="btn accent" href="https://www.booking.com/hotel/kr/tongyeonghaundeuhotel.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">Booking.com 예약 →</a>
+    </article>
 
-  <!-- 빠른 액션 -->
-  <section class="card">
-    <h2>⚡ 빠른 액션</h2>
-    <div class="actions">
-      <a class="btn" href="https://mail.google.com/mail/u/0/#drafts" target="_blank" rel="noopener">✉️ Gmail 임시보관함</a>
-      <a class="btn" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener">📅 Google Calendar</a>
-      <a class="btn ghost" href="https://map.kakao.com/?q=삼성스토어%20통영" target="_blank" rel="noopener">🗺️ 매장 위치</a>
-    </div>
-  </section>
+    <article class="hotel-card b-1">
+      <div class="rank">No. 02</div>
+      <div class="name">호텔 피코</div>
+      <div class="meta">2성 · 약 2.7km</div>
+      <div class="price-row">
+        <div class="price">77,469<span class="unit">원</span></div>
+        <div class="rating">★ 7.3</div>
+      </div>
+      <a class="btn" href="https://www.booking.com/hotel/kr/pico-tongyeong-si2.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">예약 →</a>
+    </article>
+
+    <article class="hotel-card b-1">
+      <div class="rank">No. 03</div>
+      <div class="name">통영관광호텔</div>
+      <div class="meta">약 2.3km</div>
+      <div class="price-row">
+        <div class="price">93,000<span class="unit">원</span></div>
+        <div class="rating">—</div>
+      </div>
+      <a class="btn" href="https://www.booking.com/hotel/kr/tongyeong-tourist-tongyeongsi.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">예약 →</a>
+    </article>
+
+  </div>
 
   <footer>
-    🤖 Generated by Claude Code · 출장경로 스킬<br/>
-    <span class="muted">정적 데모 페이지 (v1) · 인터랙티브 입력은 v2 (Next.js + Vercel)에서</span>
+    Generated by Claude Code · 출장경로 스킬<br/>
+    <span class="sig">v1 · Bento Modern</span>
   </footer>
 
 </div>
+
 </body>
 </html>
