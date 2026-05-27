@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>출장경로 - 강남358타워 → 삼성스토어 통영</title>
+<meta name="description" content="2026-05-27 강남358타워에서 삼성스토어 통영 가는 도어투도어 출장 경로 (1박2일)" />
+<meta name="theme-color" content="#0b4f8c" />
+<style>
+  :root {
+    --bg: #f4f6fa;
+    --card: #ffffff;
+    --ink: #14213d;
+    --sub: #5a6478;
+    --line: #e3e7ef;
+    --accent: #0b4f8c;
+    --accent-soft: #e7f0fa;
+    --gold: #d4a017;
+    --ok: #15803d;
+    --warn: #b45309;
+    --shadow: 0 1px 3px rgba(20,33,61,.06), 0 4px 16px rgba(20,33,61,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1320;
+      --card: #161c2e;
+      --ink: #e7ecf5;
+      --sub: #98a2b8;
+      --line: #232a3e;
+      --accent: #5aa9f0;
+      --accent-soft: #1b2a44;
+      --gold: #f0c14b;
+      --ok: #4ade80;
+      --warn: #f59e0b;
+      --shadow: 0 1px 3px rgba(0,0,0,.3), 0 4px 16px rgba(0,0,0,.3);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", "Pretendard", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 16px; }
+  header {
+    padding: 20px 4px 12px;
+  }
+  header .eyebrow {
+    font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700;
+  }
+  header h1 {
+    margin: 6px 0 4px;
+    font-size: 22px; font-weight: 800; letter-spacing: -.01em;
+  }
+  header .sub { color: var(--sub); font-size: 14px; }
+
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 16px 18px; margin: 12px 0; box-shadow: var(--shadow);
+  }
+  .card h2 {
+    margin: 0 0 10px; font-size: 16px; font-weight: 800;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .card h3 {
+    margin: 12px 0 6px; font-size: 14px; font-weight: 700; color: var(--ink);
+  }
+  .card p, .card li { font-size: 14px; }
+  .muted { color: var(--sub); font-size: 13px; }
+
+  /* 1구간 - 출발지점 박스 */
+  .leg {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-soft);
+    padding: 10px 12px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+  }
+  .leg .title { font-weight: 700; margin-bottom: 4px; font-size: 14px; }
+  .leg ul { margin: 4px 0 0; padding-left: 18px; font-size: 13.5px; }
+
+  .note {
+    background: rgba(180,83,9,.08);
+    border-left: 3px solid var(--warn);
+    padding: 8px 12px; border-radius: 0 6px 6px 0;
+    font-size: 13px; margin-top: 10px;
+  }
+
+  /* 표 */
+  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px -4px; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: 13px;
+    min-width: 480px;
+  }
+  th, td { padding: 8px 8px; text-align: left; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th { background: var(--accent-soft); color: var(--ink); font-weight: 700; font-size: 12px; }
+  tbody tr:hover { background: var(--accent-soft); }
+
+  /* 버튼/링크 */
+  a.btn, a.btn:visited {
+    display: inline-block;
+    background: var(--accent); color: white !important;
+    padding: 6px 10px; border-radius: 6px;
+    text-decoration: none; font-weight: 700; font-size: 12px;
+    white-space: nowrap;
+  }
+  a.btn.ghost {
+    background: transparent; color: var(--accent) !important;
+    border: 1px solid var(--accent);
+  }
+  a.link { color: var(--accent); text-decoration: none; font-weight: 600; }
+  a.link:hover { text-decoration: underline; }
+
+  /* TOP 3 강조 */
+  .top3 {
+    background: linear-gradient(135deg, var(--accent) 0%, #062f5e 100%);
+    color: #fff; border: none;
+  }
+  .top3 h2 { color: #fff; }
+  .top3 .rank {
+    display: inline-block; width: 24px; height: 24px;
+    background: var(--gold); color: #14213d;
+    border-radius: 50%; text-align: center; line-height: 24px;
+    font-weight: 800; font-size: 13px; margin-right: 8px;
+  }
+  .top3 .row {
+    background: rgba(255,255,255,.08);
+    padding: 12px; border-radius: 8px; margin: 8px 0;
+  }
+  .top3 .row .meta {
+    font-size: 12px; opacity: .85; margin-top: 6px;
+  }
+  .top3 a.btn {
+    background: var(--gold); color: #14213d !important; margin-top: 8px;
+  }
+
+  /* 호텔/맛집 카드 */
+  .item {
+    padding: 10px 0; border-bottom: 1px solid var(--line);
+  }
+  .item:last-child { border-bottom: none; }
+  .item .name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+  .item .meta { color: var(--sub); font-size: 12px; }
+  .item .desc { font-size: 13px; margin-top: 4px; color: var(--ink); }
+  .badge {
+    display: inline-block; background: var(--accent-soft); color: var(--accent);
+    padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: 700;
+    margin-right: 4px;
+  }
+
+  /* 빠른 액션 */
+  .actions {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;
+  }
+  .actions a.btn { font-size: 13px; padding: 10px 14px; }
+
+  footer {
+    text-align: center; padding: 24px 16px 40px; color: var(--sub); font-size: 12px;
+  }
+  footer a { color: var(--sub); }
+
+  /* 호텔 가격 강조 */
+  .price { font-weight: 800; color: var(--accent); }
+
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  @media (max-width: 480px) { .grid-2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">🧳 출장 경로</div>
+    <h1>강남358타워 → 삼성스토어 통영</h1>
+    <div class="sub">2026-05-27 (수) · 1박 2일 · 도어투도어 추천</div>
+  </header>
+
+  <!-- TOP 3 -->
+  <section class="card top3">
+    <h2>🏆 도어투도어 추천 TOP 3</h2>
+    <p style="font-size:12px;opacity:.85;margin:0 0 8px;">목적지 도착 시각 빠른 순</p>
+
+    <div class="row">
+      <div><span class="rank">1</span><strong>서울고속 (일반) 12:30 출발</strong></div>
+      <div class="meta">통영 도착 16:57 · 총 5시간 8분 · 약 41,600원</div>
+      <a class="btn" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫 코버스에서 예매</a>
+    </div>
+
+    <div class="row">
+      <div><span class="rank">2</span><strong>동서울 (일반) 13:00 출발</strong></div>
+      <div class="meta">통영 도착 17:02 · 총 5시간 13분 · 약 45,200원</div>
+      <a class="btn" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫 버스타고에서 예매</a>
+    </div>
+
+    <div class="row">
+      <div><span class="rank">3</span><strong>서울고속 (우등) 13:00 출발</strong></div>
+      <div class="meta">통영 도착 17:27 · 총 5시간 38분 · 약 60,000원</div>
+      <a class="btn" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫 코버스에서 예매</a>
+    </div>
+  </section>
+
+  <!-- 1구간 -->
+  <section class="card">
+    <h2>🚇 [1구간] 회사 → 출발지점</h2>
+
+    <div class="leg">
+      <div class="title">🚇 서울고속버스터미널 — 약 9분, 1,500원</div>
+      <ul>
+        <li>강남358타워 → 도보 1분 → 강남역</li>
+        <li>[2호선] 강남역 → 교대역 환승 → [3호선] 교대 → 고속터미널역 (7분, 4정거장)</li>
+        <li>고속터미널역 → 지하 연결 → 서울고속버스터미널</li>
+      </ul>
+    </div>
+
+    <div class="leg">
+      <div class="title">🚇 서울남부터미널 — 약 8분, 1,400원</div>
+      <ul>
+        <li>강남358타워 → 도보 1분 → 강남역</li>
+        <li>[2호선] 강남역 → 교대역 환승 → [3호선] 교대 → 남부터미널역 (6분, 3정거장)</li>
+        <li>남부터미널역 3번 출구 → 서울남부터미널</li>
+      </ul>
+    </div>
+
+    <div class="leg">
+      <div class="title">🚌 동서울종합터미널 — 약 22분, 1,700원</div>
+      <ul>
+        <li>강남358타워 → 도보 1분 → 강남역</li>
+        <li>[2호선] 강남역 → 잠실 → 강변역 (20분, 10정거장)</li>
+        <li>강변역 → 도보 1분 → 동서울종합터미널</li>
+      </ul>
+    </div>
+
+    <div class="note">
+      <strong>제외:</strong> 용산역(호남선 KTX는 통영 미경유), 수서역(SRT 진주 노선 운영 안 함)
+    </div>
+  </section>
+
+  <!-- 2구간 -->
+  <section class="card">
+    <h2>🚌 [2구간] 출발지점별 차편</h2>
+
+    <h3>■ 서울고속버스터미널 → 통영종합버스터미널 <span class="muted">(약 4h 10m · 하루 15회)</span></h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>출발</th><th>등급</th><th>통영 도착</th><th>요금</th><th>예매</th></tr></thead>
+      <tbody>
+        <tr><td>12:30</td><td>일반</td><td>16:40</td><td>38,600원</td><td><a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+        <tr><td>13:00</td><td>우등</td><td>17:10</td><td>57,000원</td><td><a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+        <tr><td>14:00</td><td>프리미엄</td><td>18:10</td><td>60,200원</td><td><a class="btn ghost" href="https://www.kobus.co.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>■ 서울남부터미널 → 통영종합버스터미널 <span class="muted">(약 4h 26m · 하루 11회 · 막차 23:30)</span></h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>출발</th><th>등급</th><th>통영 도착</th><th>요금</th><th>예매</th></tr></thead>
+      <tbody>
+        <tr><td>13:20</td><td>일반</td><td>17:46</td><td>약 33,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+        <tr><td>14:20</td><td>우등</td><td>18:46</td><td>약 43,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+        <tr><td>16:20</td><td>일반</td><td>20:46</td><td>약 33,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+      </tbody>
+    </table></div>
+
+    <h3>■ 동서울종합터미널 → 통영종합버스터미널 <span class="muted">(약 3h 45m · 하루 4회 · 막차 17:00)</span></h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>출발</th><th>등급</th><th>통영 도착</th><th>요금</th><th>예매</th></tr></thead>
+      <tbody>
+        <tr><td>13:00</td><td>일반</td><td>16:45</td><td>약 42,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+        <tr><td>17:00</td><td>일반 (막차)</td><td>20:45</td><td>약 42,000원</td><td><a class="btn ghost" href="https://www.bustago.or.kr/" target="_blank" rel="noopener">🎫</a></td></tr>
+      </tbody>
+    </table></div>
+
+    <p class="muted" style="margin-top:10px;">
+      📱 모바일 통합 예매: <a class="link" href="https://txbus.t-money.co.kr/" target="_blank" rel="noopener">티머니GO</a>
+    </p>
+  </section>
+
+  <!-- 3구간 -->
+  <section class="card">
+    <h2>🚌 [3구간] 통영종합버스터미널 → 삼성스토어 통영</h2>
+    <p class="muted">약 17분 · 4.4km · 시내버스 약 1,500원</p>
+    <div class="leg">
+      <ul>
+        <li>통영종합버스터미널 → 도보 1분 → 정류장</li>
+        <li>무전동 방면 시내버스 탑승 (10~15분)</li>
+        <li>무전동 하차 → 도보 3분 → 삼성스토어 통영 (무전대로 55)</li>
+      </ul>
+    </div>
+    <div class="actions">
+      <a class="btn" href="https://map.kakao.com/?sName=통영종합버스터미널&eName=삼성스토어%20통영" target="_blank" rel="noopener">🗺️ 카카오맵 길찾기</a>
+      <a class="btn ghost" href="https://map.kakao.com/link/to/삼성스토어%20통영,34.86029522870429,128.42678617831243" target="_blank" rel="noopener">📍 매장 위치 보기</a>
+    </div>
+  </section>
+
+  <!-- 날씨 -->
+  <section class="card">
+    <h2>🌤️ 통영 날씨 <span class="muted" style="font-weight:400;font-size:13px;">(2026-05-27)</span></h2>
+    <div class="grid-2">
+      <div><span class="badge">기온</span> 최저 17℃ / 최고 24℃</div>
+      <div><span class="badge">강수확률</span> 20%</div>
+      <div><span class="badge">날씨</span> 대체로 맑음</div>
+      <div><span class="badge">바람</span> 바닷바람 다소 강함</div>
+    </div>
+    <p class="muted" style="margin-top:8px;">
+      💡 가벼운 외투/얇은 자켓 권장. 해안 매장 방문 시 바람막이.
+    </p>
+  </section>
+
+  <!-- 맛집 -->
+  <section class="card">
+    <h2>🍽️ 인근 맛집 TOP 5 <span class="muted" style="font-weight:400;font-size:13px;">(무전동 일대)</span></h2>
+
+    <div class="item">
+      <div class="name">1. 대원호김선장 <span class="muted">· 한식·생선회 · 약 0.4km</span></div>
+      <div class="desc">통영 현지 활어회·해물 코스. <strong>예약 권장</strong></div>
+      <a class="link" href="https://map.kakao.com/?q=대원호김선장" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
+    </div>
+
+    <div class="item">
+      <div class="name">2. 미소가짬뽕 <span class="muted">· 중식 · 약 0.3km</span></div>
+      <div class="desc">무전동 인기 짬뽕 전문점. 점심시간 빠른 회전</div>
+      <a class="link" href="https://map.kakao.com/?q=미소가짬뽕%20통영%20무전동" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
+    </div>
+
+    <div class="item">
+      <div class="name">3. 한일식당 <span class="muted">· 한식 · 약 0.2km</span></div>
+      <div class="desc">백반·국밥 위주, 가성비 좋은 한 끼</div>
+      <a class="link" href="https://map.kakao.com/?q=한일식당%20통영%20무전동" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
+    </div>
+
+    <div class="item">
+      <div class="name">4. 베로나835 통영점 <span class="muted">· 카페·디저트 · 약 0.5km</span></div>
+      <div class="desc">매장 미팅 후 디저트·커피 미팅 적합</div>
+      <a class="link" href="https://map.kakao.com/?q=베로나835%20통영" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
+    </div>
+
+    <div class="item">
+      <div class="name">5. 롯데리아 롯데마트통영점 <span class="muted">· 햄버거 · 약 0.1km</span></div>
+      <div class="desc">출발 전 간단 요기, 매장과 가장 가까움</div>
+      <a class="link" href="https://map.kakao.com/?q=롯데리아%20롯데마트통영점" target="_blank" rel="noopener">🗺️ 카카오맵에서 보기</a>
+    </div>
+  </section>
+
+  <!-- 호텔 -->
+  <section class="card">
+    <h2>🏨 인근 호텔 TOP 3 <span class="muted" style="font-weight:400;font-size:13px;">(1박 · 70k~100k)</span></h2>
+
+    <div class="item">
+      <div class="name">1. Hound Hotel Tongyeong <span class="muted">· 2성 · 약 2.5km</span></div>
+      <div><span class="price">81,536원</span> <span class="muted">· 평점 8.0 (79리뷰)</span></div>
+      <a class="btn" style="margin-top:6px;" href="https://www.booking.com/hotel/kr/tongyeonghaundeuhotel.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">🛏️ Booking.com에서 예약</a>
+    </div>
+
+    <div class="item">
+      <div class="name">2. 호텔 피코 <span class="muted">· 2성 · 약 2.7km</span></div>
+      <div><span class="price">77,469원</span> <span class="muted">· 평점 7.3 (88리뷰)</span></div>
+      <a class="btn" style="margin-top:6px;" href="https://www.booking.com/hotel/kr/pico-tongyeong-si2.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">🛏️ Booking.com에서 예약</a>
+    </div>
+
+    <div class="item">
+      <div class="name">3. 통영관광호텔 <span class="muted">· 약 2.3km</span></div>
+      <div><span class="price">93,000원</span></div>
+      <a class="btn" style="margin-top:6px;" href="https://www.booking.com/hotel/kr/tongyeong-tourist-tongyeongsi.html?aid=8132308&checkin=2026-05-27&checkout=2026-05-28&no_rooms=1&group_adults=1&selected_currency=KRW" target="_blank" rel="noopener">🛏️ Booking.com에서 예약</a>
+    </div>
+  </section>
+
+  <!-- 빠른 액션 -->
+  <section class="card">
+    <h2>⚡ 빠른 액션</h2>
+    <div class="actions">
+      <a class="btn" href="https://mail.google.com/mail/u/0/#drafts" target="_blank" rel="noopener">✉️ Gmail 임시보관함</a>
+      <a class="btn" href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener">📅 Google Calendar</a>
+      <a class="btn ghost" href="https://map.kakao.com/?q=삼성스토어%20통영" target="_blank" rel="noopener">🗺️ 매장 위치</a>
+    </div>
+  </section>
+
+  <footer>
+    🤖 Generated by Claude Code · 출장경로 스킬<br/>
+    <span class="muted">정적 데모 페이지 (v1) · 인터랙티브 입력은 v2 (Next.js + Vercel)에서</span>
+  </footer>
+
+</div>
+</body>
+</html>
